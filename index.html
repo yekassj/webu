@@ -1,29 +1,304 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<style>
-body{
-
-    background-color: blueviolet;
-}
-h1{
-    color: aqua
-}
-
-.center{
-    color: black;
-}
-
- </style>
-
+    <title>Lo Siento Nana - Para Mi Niña Hermosa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffeff5 0%, #ffd6e7 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        header {
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            padding: 30px 20px;
+            color: white;
+            position: relative;
+        }
+        
+        .hearts-header {
+            font-size: 2rem;
+            margin-top: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .message-container {
+            background: #fff9f9;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #ff6b6b;
+            text-align: left;
+            position: relative;
+        }
+        
+        .message-container:before {
+            content: '"';
+            font-size: 4rem;
+            color: #ff6b6b;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+        }
+        
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .signature {
+            text-align: right;
+            font-style: italic;
+            color: #ff6b6b;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+        
+        .hearts {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin: 20px 0;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .interactive {
+            margin: 30px 0;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            margin: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .whatsapp-container {
+            background: #f0fff0;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border: 2px dashed #25D366;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #25D366, #128C7E);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            margin-top: 10px;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .flowers {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .flower {
+            font-size: 2.5rem;
+            animation: grow 2s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes grow {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .flower:nth-child(1) { animation-delay: 0.5s; }
+        .flower:nth-child(2) { animation-delay: 1s; }
+        .flower:nth-child(3) { animation-delay: 1.5s; }
+        .flower:nth-child(4) { animation-delay: 2s; }
+        .flower:nth-child(5) { animation-delay: 2.5s; }
+        
+        footer {
+            background: #f8f8f8;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        .hidden-message {
+            display: none;
+            background: #ffefef;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px dashed #ff6b6b;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .btn, .whatsapp-btn { padding: 12px 30px; }
+        }
+    </style>
 </head>
 <body>
-    <center>
-         <h1>"HOLA MUNDO"</h1> 
-    </center>
-   
+    <div class="container">
+        <header>
+            <h1>Lo Siento Mucho Nana</h1>
+            <p class="subtitle">Este mensaje es para la niña más hermosa del mundo ❤</p>
+            <div class="hearts-header">💖 🥺 💖</div>
+        </header>
+        
+        <div class="content">
+            <div class="message-container">
+                <p class="message">Hola nana,</p>
+                <p class="message">Te pido perdón por haberte dejado sola, he estado demasiado ocupado con el trabajo.</p>
+                <p class="message">Pero te prometo compensarlo nana, no creas que ya me cansaste o que te estoy abandonando 🥺.</p>
+                <p class="message">Recuerda que yo te quiero mucho nana y que siempre te amaré pase lo que pase nana.</p>
+                <p class="signature">Te amo mucho nana,<br>Tu nano que te quiere muchote</p>
+            </div>
+            
+            <div class="hearts">❤ ❤ ❤</div>
+            
+            <div class="whatsapp-container">
+                <p>Si me perdonas, por favor házmelo saber por WhatsApp</p>
+                <a href="https://wa.me/?text=Hola%20nano,%20te%20perdono%20🥺%20te%20amo%20mucho%20💖" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Enviar mensaje por WhatsApp
+                </a>
+            </div>
+            
+            <div class="interactive">
+                <button class="btn" onclick="showFlowers()">
+                    <i class="fas fa-heart"></i> Ver flores para ti
+                </button>
+                <button class="btn" onclick="showMessage()">
+                    <i class="fas fa-envelope"></i> Mensaje especial
+                </button>
+            </div>
+            
+            <div class="flowers" id="flowers">
+                <div class="flower">🌹</div>
+                <div class="flower">🌻</div>
+                <div class="flower">🌸</div>
+                <div class="flower">💐</div>
+                <div class="flower">🌷</div>
+            </div>
+            
+            <div id="hidden-message" class="hidden-message">
+                <p>Eres la persona más importante en mi vida nana. Prometo organizar mejor mi tiempo para no dejarte sola nunca más. Eres mi razón para sonreír cada día. 💖</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Hecho con mucho amor para mi nana hermosa | Espero que me perdones</p>
+        </footer>
+    </div>
+
+    <script>
+        // Ocultar las flores y mensaje inicialmente
+        document.getElementById('flowers').style.display = 'none';
+        document.getElementById('hidden-message').style.display = 'none';
+        
+        // Función para mostrar las flores
+        function showFlowers() {
+            const flowers = document.getElementById('flowers');
+            flowers.style.display = 'flex';
+            
+            // Mostrar mensaje de agradecimiento
+            alert('¡Gracias por ser la mejor nana del mundo! Espero que te gusten estas flores virtuales 💐');
+        }
+        
+        // Función para mostrar mensaje especial
+        function showMessage() {
+            const message = document.getElementById('hidden-message');
+            if (message.style.display === 'none') {
+                message.style.display = 'block';
+            } else {
+                message.style.display = 'none';
+            }
+        }
+    </script>
 </body>
-</html>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
